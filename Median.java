@@ -18,12 +18,16 @@ public class Median {
           pole = zvetsi(pole, pole.length + 1);
           } 
     }
-    Arrays.sort(pole);
+       Arrays.sort(pole, 0, pocet); 
+    for ( int i = 0; i < pole.length; i++)  {
+     System.out.printf("%d ", pole[i]);
+     }
+     System.out.println();
     double median;
-     if (((double)(pole.length)) % 2 == 0) {
-          median = ((double)(pole[(int) ((double)pole.length)/2]) + (double)(pole[(int) (((double)pole.length)/2) - 1]))/2; 
+     if ((pocet) % 2 == 0) {
+          median = pole[pocet/2] + pole[pocet/2 - 1]/2; 
            } else {
-          median = (double) pole[(int) (((double)pole.length)/2)];
+          median = pole[pocet/2];
            }
       System.out.println(median);
    }
